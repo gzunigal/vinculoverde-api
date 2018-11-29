@@ -1,12 +1,13 @@
+CREATE
 {
 "action": "create",
 "residuo":{
-"code": "SKU!#4321",
-"estados": [{"paso": "En camino a centro de acopio", "gps": "123324"}],
-"final": false,
-"owner": "03d6071478e0173e356d7011c5ed245fbe27967d3fb126e7d588fa1641bbd87530",
-"raws": [],
-"residuo": "Lavadora",
-"rut": "2144353214"
-}
+  "code": "SKU!#4321",
+  "estados": [{"paso": "En camino a centro de acopio", "gps": "123324"}],
+  "final": false,
+  "owner": "03d6071478e0173e356d7011c5ed245fbe27967d3fb126e7d588fa1641bbd87530",
+  "raws": [],
+  "residuo": "Lavadora",
+  "rut": "2144353214"
+  }
 }
