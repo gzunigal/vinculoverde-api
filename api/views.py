@@ -257,6 +257,7 @@ class ProductViewSet(viewsets.ViewSet):
     
 
     residuo['final']=True
+    residuo['raws']=request.data
     # encoding payload
 
     payload = {
