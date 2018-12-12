@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from django.contrib.auth.models import AnonymousUser
+from rest_framework import viewsets, exceptions, permissions
 from rest_framework.response import Response
 
 ## AQUI
@@ -26,23 +27,18 @@ VERSION = '0.0'
 PREFIX = '19d832'
 ## HASTA AQUI
 
-
-# Create your views here.
 class ProductViewSet(viewsets.ViewSet):
   # Required for the Browsable API renderer to have a nice form.
   #serializer_class = serializers.ProductSerializer
 
   # GET /products/
   def list(self, request):
-    #serializer = serializers.TaskSerializer(
-    #    instance=tasks.values(), many=True)
 
     r = requests.get(API_URL+'/state',params={'address':PREFIX}).json()
     response = []
     for product in r['data']:
       decoded = base64.decodebytes(product['data'].encode())
       data = json.loads(decoded.decode())
-      #data['bc_address'] = product['address']
       response.append(data)
 
     return Response(response)
